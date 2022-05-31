@@ -15,6 +15,7 @@ namespace CodeBooks.Models
         public string userName { get; set; }
         [Column(TypeName = "varchar(10)")]
         public string password { get; set; }
+        public int yetkiLvl { get; set; }
 
     }
 }
