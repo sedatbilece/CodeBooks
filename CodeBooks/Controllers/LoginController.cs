@@ -25,6 +25,8 @@ namespace CodeBooks.Controllers
             return View();
         }
 
+
+
         [HttpPost]
         public async Task<IActionResult> GirisYapAsync(Admin a)
         {
@@ -48,6 +50,10 @@ namespace CodeBooks.Controllers
         }
 
 
+
+
+
+
         [HttpGet]
         public async Task<IActionResult> CikisYap()
         {
@@ -56,6 +62,9 @@ namespace CodeBooks.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+
+
 
     }
 }

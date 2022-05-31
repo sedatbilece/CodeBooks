@@ -5,22 +5,50 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Admin Paneli Giriş Sayfası</title>
     <style>
+        .con{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            
+
+        }
+        .form-container {
+            margin-top: 200px;
+            width: 50vw;
+            padding:20px;
+            border-radius:10px;
+            
+        }
+
     </style>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
 </head>
 <body>
+    <div class="con">
 
+        <div class="form-container card">
+            <form method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">User Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter UserName" name="userName">
 
-    <form method="post">
-        <b>Kullanıcı Adı</b>
-        <input type="type" name="userName" value="" />
-        <br />
-        <b>Şifre</b>
-        <input type="password" name="password" value="" />
-        <br />
-        <input type="submit" class="fadeIn fourth" value="Giriş">
-    </form>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" value="">
+                </div>
+
+                <button type="submit" class="btn btn-outline-success">Submit</button>
+            </form>
+
+        </div>
+
+    </div>
+    
+
 
 
 </body>
