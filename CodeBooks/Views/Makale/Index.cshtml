@@ -5,5 +5,50 @@
     ViewData["Title"] = "Makaleler Sayfası";
 
 }
+@using CodeBooks.Models
+@model List<Makale>
 
 <h1>Makale index page</h1>
+
+<!-- TABLE GELECEK-->
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Makale Basligi</th>
+        <th>Yazar </th>
+        <th>Tarih</th>
+        <th>KategoriID</th>
+       
+
+        
+        <th>Güncelle</th>
+
+
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.MakaleID</td>
+            <td>@item.Baslik</td>
+            <td>@item.yazar</td>
+            <td>@item.Tarih</td>
+            <td>@item.KategoriID</td>
+            
+            
+            
+            <td> <a class="btn btn-warning" href="/Makale/MakaleGetir/@item.MakaleID">Güncelle</a> </td>
+
+        </tr>
+
+    }
+
+</table>
+
+
+
+
+<a class="btn btn btn-outline-dark" href="/Makale/MakaleEkle">Yeni Makale</a>

@@ -1,0 +1,28 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Makale Ekle";
+}
+@model CodeBooks.Models.Makale
+
+<br />
+<form action="/Makale/MakaleEkle" method="post" class="form-group">
+
+    <b>Kategori :</b>
+    @Html.DropDownListFor(x => x.kategori.KategoriID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+
+    <b>Makale Başlığı :</b>
+    <input type="text" name="Baslik"  class = "form-control"/>
+    <br />
+    <b>Yazar Adı :</b>
+    <input type="text" name="yazar" class = "form-control"/>
+    <br />
+    <b>Makale:</b>
+    <input type="text" name="Text" class = "form-control"/>
+    <br />
+
+
+
+
+    <input type="submit" class="fadeIn fourth btn btn-outline-success" value="Ekle">
+</form>
