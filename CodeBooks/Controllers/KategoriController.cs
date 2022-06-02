@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace CodeBooks.Controllers
 {
+
+    // en son [Authorize] ekle
     public class KategoriController : Controller
     {
         public IActionResult Index()

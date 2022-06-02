@@ -26,10 +26,27 @@ namespace CodeBooks.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+
+        public IActionResult BlogPost()// blog yazisi içerik sayfası (int id ) alacak
         {
             return View();
         }
+
+        public IActionResult KategoriListesi() // Liste dönecek 
+        {
+            return View();
+        }
+        public IActionResult MakaleListesi()// kategoriye bağlı yazilar (int id) alcak 
+        {
+            return View();
+        }
+
+        
+
+
+
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

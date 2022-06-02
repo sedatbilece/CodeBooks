@@ -20,6 +20,8 @@ namespace CodeBooks.Controllers
         }
 
 
+
+        // form sayfasını döndürüror 
         public IActionResult GirisYap()
         {
             return View();
@@ -27,12 +29,17 @@ namespace CodeBooks.Controllers
 
 
 
+        // form gönderildiğinde asenkron olarak çalışır
         [HttpPost]
+        //                                             formdan gelen biligileri admin modelinde gelir
         public async Task<IActionResult> GirisYapAsync(Admin a)
         {
+            // veritab böyle bir bilgi varmı kontrolü
             var bilgiler = c.Admins.FirstOrDefault(x => x.userName == a.userName && x.password == a.password);
 
-            if (bilgiler != null)
+
+            //var ise
+            if (bilgiler != null)// authorize işlemleri
             {
                 var claims = new List<Claim>
                 {
@@ -42,18 +49,18 @@ namespace CodeBooks.Controllers
                 var useridentity = new ClaimsIdentity(claims, "Login");
                 ClaimsPrincipal principal = new ClaimsPrincipal(useridentity);
                 await HttpContext.SignInAsync(principal);
-                return RedirectToAction("Index", "Admin");
+                return RedirectToAction("Index", "Admin");// işlem başarılı ise şifre istenen sayfaya atar
             }
 
 
-            return View();
+            return View();// işlem başarısız ise bizi login sayfasına geri döndürür
         }
 
 
 
 
 
-
+        // authorize işlemini manuel bitirme
         [HttpGet]
         public async Task<IActionResult> CikisYap()
         {

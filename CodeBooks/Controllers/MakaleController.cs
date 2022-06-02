@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodeBooks.Controllers
 {
+    // en son [Authorize] ekle
     public class MakaleController : Controller
     {
         public IActionResult Index()
