@@ -1,0 +1,22 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Kategori Güncelle";
+}
+@model CodeBooks.Models.Kategori  
+
+    <br />
+
+
+<form action="/Kategori/KategoriUpdate" method="post" class="form-group">
+
+
+    <b>Kategori Id :</b>
+    <input type="text" name="KategoriID" value="@Model.KategoriID" />
+    <b>Kategori Adı :</b>
+    <input type="text" name="KategoriAd" value="@Model.KategoriAd" />
+
+    
+
+    <input type="submit" class="fadeIn fourth" value="Güncelle">
+</form>

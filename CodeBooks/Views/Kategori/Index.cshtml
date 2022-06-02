@@ -2,7 +2,40 @@
 @{
 
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    ViewData["Title"]= "Kategoriler Sayfası";
+    ViewData["Title"] = "Kategoriler Sayfası";
 }
+@using CodeBooks.Models
+@model List<Kategori> 
 
-<h1>Kategori index page</h1>
+    <br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kategori ad</th>
+        <th>Aktiflik </th>
+        <th>AktifEt</th>
+        <th>PasifEt</th>
+        <th>Güncelle</th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.KategoriID</td>
+            <td>@item.KategoriAd</td>
+            <td>@item.Aktiflik</td>
+            <td> <a class="btn btn-success" href="/Kategori/AktifEt/@item.KategoriID">Aktif et</a> </td>
+            <td> <a class="btn btn-danger" href="/Kategori/PasifEt/@item.KategoriID">Pasif Et</a> </td>
+            <td> <a class="btn btn-warning" href="/Kategori/KategoriGetir/@item.KategoriID">Güncelle</a> </td>
+            
+        </tr>
+
+    }
+
+</table>
+
+
+<a class="btn btn btn-outline-dark" href="/Kategori/YeniKategori">Yeni Kategori</a>
