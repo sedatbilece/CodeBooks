@@ -31,12 +31,28 @@
 </div>
 
 @section Scripts{
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
-
+    
+    <script src="~/ckeditor5-34.1.0-kw2j603dljbx/build/ckeditor.js"></script>
     <script>
         ClassicEditor
-            .create(document.querySelector('#texteditor'))
+            .create(document.querySelector('#texteditor'), {
+
+                licenseKey: '',
+
+
+
+            })
+            .then(editor => {
+                window.editor = editor;
+
+
+
+
+            })
             .catch(error => {
+                console.error('Oops, something went wrong!');
+                console.error('Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:');
+                console.warn('Build id: kw2j603dljbx-px5xuqpzaudd');
                 console.error(error);
             });
     </script>
