@@ -15,7 +15,7 @@ namespace CodeBooks.Controllers
         Context c = new Context();
         public IActionResult Index()
         {
-            ViewBag.kategoriad = c.Kategoris.ToList();
+            ViewBag.kategoriad = c.Kategoris.ToList();// include kullanmadan da ad bilgisine erişilebiliyor
             
             var degerler = c.Makales.ToList();
             return View(degerler);
@@ -42,7 +42,10 @@ namespace CodeBooks.Controllers
         {
 
             var kat = c.Kategoris.Where(x => x.KategoriID == m.kategori.KategoriID).FirstOrDefault();
-            m.Tarih = "22.04.2021";
+
+            DateTime dateAndTime = DateTime.Now;
+            m.Tarih = dateAndTime.ToString("dd/MM/yyyy");
+            
             m.kategori = kat;
             c.Makales.Add(m);
             c.SaveChanges();

@@ -6,23 +6,40 @@
 @model CodeBooks.Models.Makale
 
 <br />
-<form action="/Makale/MakaleEkle" method="post" class="form-group">
+<div class="mr-5 ml-5">
+    <form action="/Makale/MakaleEkle" method="post" class="form-group">
 
-    <b>Kategori :</b>
-    @Html.DropDownListFor(x => x.kategori.KategoriID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        <b>Kategori :</b>
+        @Html.DropDownListFor(x => x.kategori.KategoriID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
 
-    <b>Makale Başlığı :</b>
-    <input type="text" name="Baslik"  class = "form-control"/>
-    <br />
-    <b>Yazar Adı :</b>
-    <input type="text" name="yazar" class = "form-control"/>
-    <br />
-    <b>Makale:</b>
-    <input type="text" name="Text" class = "form-control"/>
-    <br />
-
-
+        <b>Makale Başlığı :</b>
+        <input type="text" name="Baslik" class="form-control" />
+        <br />
+        <b>Yazar Adı :</b>
+        <input type="text" name="yazar" class="form-control" />
+        <br />
+        <b>Makale:</b>
+        <textarea class="form-control" name="Text" id="texteditor">  </textarea>
+        <br />
 
 
-    <input type="submit" class="fadeIn fourth btn btn-outline-success" value="Ekle">
-</form>
+
+
+        <input type="submit" class="fadeIn fourth btn btn-outline-success" value="Ekle">
+    </form>
+
+</div>
+
+@section Scripts{
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#texteditor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+
+}

@@ -14,6 +14,7 @@ namespace CodeBooks.Controllers
     
     public class HomeController : Controller
     {
+        Context c = new Context();
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -23,13 +24,24 @@ namespace CodeBooks.Controllers
 
         public IActionResult Index()
         {
-            return View();
+
+            
+
+            var maks = c.Makales.OrderByDescending(x => x.MakaleID).ToList();
+            return View(maks);
         }
 
 
-        public IActionResult BlogPost()// blog yazisi içerik sayfası (int id ) alacak
+        public IActionResult BlogPost(int id)// blog yazisi içerik sayfası (int id ) alacak
         {
-            return View();
+           var postmakale=  c.Makales.Find(id);
+
+            if (postmakale == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(postmakale);
         }
 
         public IActionResult KategoriListesi() // Liste dönecek 
