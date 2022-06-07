@@ -46,11 +46,31 @@ namespace CodeBooks.Controllers
 
         public IActionResult KategoriListesi() // Liste dönecek 
         {
-            return View();
+          var deg  =  c.Kategoris.Where(x => x.Aktiflik == 1).ToList();
+            return View(deg);
         }
-        public IActionResult MakaleListesi()// kategoriye bağlı yazilar (int id) alcak 
+        public IActionResult MakaleListesi(int id)// kategoriye bağlı yazilar (int id) alcak 
         {
-            return View();
+            var deg = c.Makales.Where(x => x.KategoriID == id).ToList();
+           var katadi = c.Kategoris.Find(id);
+            if (katadi == null)
+            {
+                ViewBag.katadi = "";
+            }
+            else
+            {
+                ViewBag.katadi = katadi.KategoriAd;
+            }
+            if (deg == null)
+            {
+                ViewBag.kontrol = 0;
+            }
+            else
+            {
+                ViewBag.kontrol = 1;
+            }
+           
+            return View(deg);
         }
 
         

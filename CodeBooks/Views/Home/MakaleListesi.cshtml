@@ -1,12 +1,35 @@
 ﻿@{
-    ViewData["Title"] = "Kategori Listesi ";
+    ViewData["Title"] = "Makale Listesi ";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
+@model List<CodeBooks.Models.Makale>
 
-<div class="item mb-5">
-    <div class="media">
-        <div class="media-body">
-            <h3 class="title mb-1"><a href="blog-post.html">Why Every Developer Should Have A Blog</a></h3>
-        </div><!--//media-body-->
-    </div><!--//media-->
-</div><!--//item-->
+
+<h1>@ViewBag.katadi Ait Yazilar :</h1>
+<hr />
+
+@if (ViewBag.kontrol == 1)
+{
+
+    @foreach (var item in Model)
+    {
+
+        <div class="item mb-5">
+            <div class="media">
+                <div class="media-body">
+                    <h3 class="title mb-1"><a href="/Home/BlogPost/@item.MakaleID">  @item.Baslik  </a></h3>
+                </div><!--//media-body-->
+            </div><!--//media-->
+        </div><!--//item-->
+
+    }
+}else{
+
+    <div class="alert alert-danger">
+        Kategoriye ait  makale bulunamadı
+    </div>
+
+
+
+            }
+

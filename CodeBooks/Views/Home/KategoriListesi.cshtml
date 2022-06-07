@@ -3,12 +3,23 @@
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
 
-<div class="item mb-5">
-    <div class="media">
-        <div class="media-body">
-            <h3 class="title mb-1"><a href="blog-post.html">Why Every Developer Should Have A Blog</a></h3>
-        </div><!--//media-body-->
-    </div><!--//media-->
-</div><!--//item-->
+@model List<CodeBooks.Models.Kategori>
+
+<h1>Kategoriler : </h1> <hr />
+
+@foreach (var item in Model)
+{
+
+    <div class="item mb-5">
+        <div class="media">
+            <div class="media-body">
+                <h3 class="title mb-1"><a href="/Home/MakaleListesi/@item.KategoriID">  @item.KategoriAd  </a></h3>
+            </div><!--//media-body-->
+        </div><!--//media-->
+    </div><!--//item-->
+
+}
+
+
 
 

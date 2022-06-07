@@ -11,8 +11,7 @@ namespace CodeBooks.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
-            optionsBuilder.UseSqlServer("Server=tcp:sqlazureserver1000.database.windows.net,1433;Initial Catalog=DenemeDB;Persist Security Info=False;User ID=codebooksadmin;Password=1327_Deneme;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            optionsBuilder.UseSqlServer("server=Sedat; database=CodeBooksDB; integrated security =true;");
         }
 
         public DbSet<Admin> Admins { get; set; }
