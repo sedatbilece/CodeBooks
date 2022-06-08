@@ -1,4 +1,5 @@
 ﻿using CodeBooks.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,10 @@ using System.Threading.Tasks;
 namespace CodeBooks.Controllers
 {
 
-   
+
 
     // en son [Authorize] ekle
+    [Authorize]
     public class KategoriController : Controller
     {
 
