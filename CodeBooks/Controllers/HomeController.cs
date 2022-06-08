@@ -25,9 +25,8 @@ namespace CodeBooks.Controllers
         public IActionResult Index()
         {
 
-            
-
             var maks = c.Makales.OrderByDescending(x => x.MakaleID).ToList();
+
             return View(maks);
         }
 

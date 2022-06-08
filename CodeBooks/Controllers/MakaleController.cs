@@ -57,6 +57,17 @@ namespace CodeBooks.Controllers
             return RedirectToAction("Index", "Makale");
         }
 
+        public IActionResult MakaleSil(int id)
+        {
+            var deg = c.Makales.Find(id);
+            c.Remove(deg);
+           
+            c.SaveChanges();
+
+
+
+            return RedirectToAction("Index", "Makale");
+        }
 
 
     }

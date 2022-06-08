@@ -24,6 +24,9 @@ namespace CodeBooks.Controllers
 
             return View(degerler);
         }
+
+
+
         [HttpGet]
         public IActionResult YeniKategori()
         {

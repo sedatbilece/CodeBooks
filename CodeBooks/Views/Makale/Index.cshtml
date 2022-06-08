@@ -23,6 +23,7 @@
 
         
         <th>Güncelle</th>
+        <th>Sil</th>
 
 
     </tr>
@@ -31,18 +32,19 @@
     @foreach (var item in Model)
     {
 
-        <tr>
-            <td>@item.MakaleID</td>
-            <td>@item.Baslik</td>
-            <td>@item.yazar</td>
-            <td>@item.Tarih</td>
-            <td>@item.kategori.KategoriAd</td>
-            
-            
-            
-            <td> <a class="btn btn-warning" href="/Makale/MakaleGetir/@item.MakaleID">Güncelle</a> </td>
+<tr>
+    <td>@item.MakaleID</td>
+    <td>@item.Baslik</td>
+    <td>@item.yazar</td>
+    <td>@item.Tarih</td>
+    <td>@item.kategori.KategoriAd</td>
 
-        </tr>
+
+
+    <td> <a class="btn btn-warning" href="/Makale/MakaleGetir/@item.MakaleID">Güncelle</a> </td>
+    <td> <a class="btn btn-danger" href="/Makale/MakaleSil/@item.MakaleID">Sil</a> </td>
+
+</tr>
 
     }
 
