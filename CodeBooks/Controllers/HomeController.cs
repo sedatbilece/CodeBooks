@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace CodeBooks.Controllers
 {
 
-    
+    //test deneme
     public class HomeController : Controller
     {
         Context c = new Context();
