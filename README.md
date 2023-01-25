@@ -1,4 +1,4 @@
-# ASP NET CORE 5.0 Blog Website
+# ASP NET CORE 5.0 MVC Blog Website
 
 
 ### Description
